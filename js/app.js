@@ -23,7 +23,7 @@ Horn.prototype.renderWithjQueryClone = function() {
     clone.find('h2').text(this.title);
     clone.find('img').attr('src', this.image_url);
     clone.find('p').text(this.description);
-    // console.log(clone);
+    // clone.removeAttr('id');
 
     $('#horns').append(clone);
 };
