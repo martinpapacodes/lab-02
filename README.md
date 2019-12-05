@@ -29,7 +29,7 @@ Number and name of feature: Feature 1: Pagination
 
 Estimate of time needed to complete: 1 hour
 
-Start time: _____
+Start time: 9:30 AM
 
 Finish time: _____
 

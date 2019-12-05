@@ -1,3 +1,4 @@
+
 let photoGallery = $('#photo-template');
 // console.log(photoGallery);
 
@@ -29,12 +30,48 @@ Horn.prototype.renderWithjQueryClone = function () {
 };
 
 Horn.prototype.populateDropDown = function () {
-  let clone = $('#dropDown').append(`
+  let dropDown = $('#dropDown').append(`
         <option value="${this.keyword}">${this.keyword}</option>
     `);
 
 };
 $.get('data/page-1.json').then(
+  (data) => {
+    //   console.log(data);
+    data.forEach(hornObjFromFile => {
+      let horn = new Horn(hornObjFromFile.image_url, hornObjFromFile.title, hornObjFromFile.description, hornObjFromFile.keyword, hornObjFromFile.horns);
+      //   horn.renderWithjQueryClone();
+      horn.populateDropDown();
+
+      $('#dropDown').click(function () {
+        let selectedItem = $('#dropDown :selected').val();
+
+
+        if (selectedItem === hornObjFromFile.keyword) {
+          $('#photo-template').append(`
+                    <div>
+                    <img src="${hornObjFromFile.image_url}" />
+                    <h2>${hornObjFromFile.title}</h2>
+                    </div>
+                `);
+        }
+        // console.log(selectedItem);
+      });
+
+    });
+
+
+
+  });
+
+
+
+// });
+
+
+// ----------------------------------------------------
+
+$.get('data/page-2.json').then(
   (data) => {
     //   console.log(data);
     data.forEach(hornObjFromFile => {
@@ -45,6 +82,7 @@ $.get('data/page-1.json').then(
       $('#dropDown').click(function () {
         let selectedItem = $('#dropDown :selected').val();
 
+
         if (selectedItem === hornObjFromFile.keyword) {
           $('#photo-template').append(`
                     <div>
@@ -53,14 +91,9 @@ $.get('data/page-1.json').then(
                     </div>
                 `);
         }
+        // console.log(selectedItem);
       });
+
     });
-  });
 
-
-
-// });
-
-
-// ----------------------------------------------------
-
+  })
