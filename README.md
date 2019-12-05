@@ -56,9 +56,20 @@ Estimate of time needed to complete: 1 hour
 
 Start time: 11:20
 
-Finish time: 
+Finish time: 11:50
 
-Actual time needed to complete: s
+Actual time needed to complete: 30
 
+---
+
+Number and name of feature: Feature 4: Sort the images
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 11:50
+
+Finish time:
+
+Actual time needed to complete: 
 
 

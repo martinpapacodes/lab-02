@@ -1,10 +1,22 @@
-img {
-    width: 400px;
-    height: 400px;
+
+#photos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-#horns {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+#photos img  {
+    width: 400px;
+    height: 400px;
+    border: 1px #ccc solid;
+    padding: 5px;
+}
+
+#photos h2 {
+    font-family: 'Anton', sans-serif;
+}
+
+#photos p {
+    width: 400px;
 }
